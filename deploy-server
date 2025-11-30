@@ -12,7 +12,7 @@ fi
 rm -rf build
 ./gradlew build
 
-remote=root@attestation.app
+remote=root@136.117.88.169
 path=/opt/attestation
 active=$(ssh $remote readlink $path/deploy)
 

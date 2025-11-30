@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from os.path import getmtime
 from pathlib import Path
 
-base = "https://attestation.app"
+base = "https://136.117.88.169.sslip.io"
 
 pages = [
     ["/", 1.0],
@@ -16,7 +16,7 @@ pages = [
     ["/humans.txt", 0.0],
     ["/privacy-policy", 0.2],
     ["/source", 0.1],
-    ["/tutorial", 1.0]
+    ["/tutorial", 1.0],
 ]
 
 base_mtime = getmtime("static-tmp")
@@ -26,7 +26,7 @@ for page in pages:
     path = page[0]
     loc = base + path
     filepath = "static-production" + path
-    if path[-1] == '/':
+    if path[-1] == "/":
         filepath += "index.html"
     elif "." not in path:
         filepath += ".html"
@@ -34,7 +34,9 @@ for page in pages:
     mtime = getmtime(filepath)
     if mtime > base_mtime:
         print(loc)
-    lastmod = datetime.fromtimestamp(mtime, timezone.utc).strftime("%Y-%m-%dT%H:%M:%S%:z")
+    lastmod = datetime.fromtimestamp(mtime, timezone.utc).strftime(
+        "%Y-%m-%dT%H:%M:%S%:z"
+    )
     priority = page[1]
     entries.append(f"""
     <url>

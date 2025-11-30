@@ -12,7 +12,7 @@ fi
 
 ./process-static $fd
 
-remote=root@attestation.app
+remote=root@136.117.88.169
 
 # use last modified timestamps from attestation.app
 rsync -rptcv --chmod=D755,F644 --delete --fsync --preallocate $remote:/srv/attestation.app/ static-production
@@ -50,10 +50,10 @@ ssh $remote nginx -s reload
 echo
 echo active is now $target
 
-rsync -pcv --chmod=755 --fsync --preallocate remote-backup $remote:/usr/local/bin/
-rsync -pcv --chmod=644 --fsync --preallocate systemd/system/remote-backup.timer $remote:/etc/systemd/system/remote-backup.timer
-rsync -pcv --chmod=644 --fsync --preallocate systemd/system/remote-backup.service $remote:/etc/systemd/system/remote-backup.service
-rsync -pcv --chmod=644 --chown attestation:attestation --fsync --preallocate backup-public-key.txt cloud-archive.sh $remote:/var/lib/attestation/
+# rsync -pcv --chmod=755 --fsync --preallocate remote-backup $remote:/usr/local/bin/
+# rsync -pcv --chmod=644 --fsync --preallocate systemd/system/remote-backup.timer $remote:/etc/systemd/system/remote-backup.timer
+# rsync -pcv --chmod=644 --fsync --preallocate systemd/system/remote-backup.service $remote:/etc/systemd/system/remote-backup.service
+# rsync -pcv --chmod=644 --chown attestation:attestation --fsync --preallocate backup-public-key.txt cloud-archive.sh $remote:/var/lib/attestation/
 
 if [[ -n "$changed" ]]; then
     ./indexnow <<< "$changed"

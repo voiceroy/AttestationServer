@@ -17,20 +17,18 @@ for url in urls:
     if not validators.url(url):
         sys.exit(3)
 
-host = "attestation.app"
+host = "136.117.88.169.sslip.io"
 api_url = "https://api.indexnow.org/indexnow"
 
 with open("indexnow-key.txt") as keyfile:
     key = keyfile.read().strip()
 
+
 def submit(urls):
     print(urls)
-    data = {
-        "host": host,
-        "key": key,
-        "urlList": urls
-    }
+    data = {"host": host, "key": key, "urlList": urls}
     r = requests.post(api_url, json=data)
     print(r.status_code)
+
 
 submit(urls)

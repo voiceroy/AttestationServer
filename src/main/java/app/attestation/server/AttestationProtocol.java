@@ -161,15 +161,15 @@ class AttestationProtocol {
             OS_ENFORCED_FLAGS_OEM_UNLOCK_ALLOWED |
             OS_ENFORCED_FLAGS_SYSTEM_USER;
 
-    private static final String AUDITOR_APP_PACKAGE_NAME_RELEASE = "app.attestation.auditor";
-    private static final String AUDITOR_APP_PACKAGE_NAME_PLAY = "app.attestation.auditor.play";
-    private static final String AUDITOR_APP_PACKAGE_NAME_DEBUG = "app.attestation.auditor.debug";
+    private static final String AUDITOR_APP_PACKAGE_NAME_RELEASE = "app.voiceroy.attestation.auditor";
+    private static final String AUDITOR_APP_PACKAGE_NAME_PLAY = "app.voiceroy.attestation.auditor.play";
+    private static final String AUDITOR_APP_PACKAGE_NAME_DEBUG = "app.voiceroy.attestation.auditor.debug";
     private static final String AUDITOR_APP_SIGNATURE_DIGEST_RELEASE =
-            "990E04F0864B19F14F84E0E432F7A393F297AB105A22C1E1B10B442A4A62C42C";
+            "7F9DFB82AD36A131722B942F26CD172B74170E5CEB470FAD126A3C4078879968";
     private static final String AUDITOR_APP_SIGNATURE_DIGEST_PLAY =
-            "075335BD7B54C965222B5284D2A1FDEF1198AE45EC7B09A4934287A0E3A243C7";
+            "7F9DFB82AD36A131722B942F26CD172B74170E5CEB470FAD126A3C4078879968";
     private static final String AUDITOR_APP_SIGNATURE_DIGEST_DEBUG =
-            "17727D8B61D55A864936B1A7B4A2554A15151F32EBCF44CDAA6E6C3258231890";
+            "7F9DFB82AD36A131722B942F26CD172B74170E5CEB470FAD126A3C4078879968";
     private static final byte AUDITOR_APP_VARIANT_RELEASE = 0;
     private static final byte AUDITOR_APP_VARIANT_PLAY = 1;
     private static final byte AUDITOR_APP_VARIANT_DEBUG = 2;

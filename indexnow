@@ -17,7 +17,7 @@ for url in urls:
     if not validators.url(url):
         sys.exit(3)
 
-host = "136.117.88.169.sslip.io"
+host = "attestationserver.fly.dev"
 api_url = "https://api.indexnow.org/indexnow"
 
 with open("indexnow-key.txt") as keyfile:

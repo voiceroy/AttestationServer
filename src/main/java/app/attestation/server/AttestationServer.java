@@ -86,7 +86,7 @@ class AttestationServer {
     private static final int HISTORY_PER_PAGE = 20;
     private static final long MMAP_SIZE = 1024 * 1024 * 1024;
 
-    static final String DOMAIN = "136.117.88.169.sslip.io";
+    static final String DOMAIN = "attestationserver.fly.dev";
     private static final String ORIGIN = "https://" + DOMAIN;
 
     private static final long POST_START_DELAY_MS = 1000;

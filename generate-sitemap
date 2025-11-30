@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from os.path import getmtime
 from pathlib import Path
 
-base = "https://136.117.88.169.sslip.io"
+base = "https://attestationserver.fly.dev"
 
 pages = [
     ["/", 1.0],

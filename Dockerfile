@@ -13,6 +13,9 @@ WORKDIR /build
 
 COPY . .
 
+RUN git config --global --add safe.directory /build && \
+    git submodule update --init --recursive
+
 RUN python -m venv venv
 
 ENV PATH="/build/venv/bin:$PATH"
@@ -43,6 +46,8 @@ RUN pacman -Syu --noconfirm && \
 
 WORKDIR /opt/attestation
 RUN mkdir -p /srv/attestation.app /data/db
+
+COPY --from=builder /build/nginx-tmp/snippets /etc/nginx/snippets
 
 COPY --from=builder /build/build/libs /opt/attestation/
 COPY --from=builder /build/static-tmp /srv/attestation.app
